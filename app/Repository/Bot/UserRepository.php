@@ -11,7 +11,7 @@ class UserRepository implements UserInterface{
     }
     public function find($telegram_user_id){
 
-        return User::where('telegram_user_id',$telegram_user_id)->firstOrfail();
+        return User::where('telegram_user_id',$telegram_user_id)->first();
     
     }
 

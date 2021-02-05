@@ -31,7 +31,17 @@ class UserController extends Controller
 
     public function show($telegram_user_id)
     {
-        return $this->repo->find($telegram_user_id);
+        $user = $this->repo->find($telegram_user_id);
+
+        if($user){
+            return Response()->json($user,200);
+        }
+        else{
+            return Response()->json([
+                'error' =>"the user model not found",
+                'code' =>404
+            ],404);
+        };
     }
 
 
