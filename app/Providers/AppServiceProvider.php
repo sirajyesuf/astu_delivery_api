@@ -28,5 +28,16 @@ class AppServiceProvider extends ServiceProvider
             'App\Repository\Bot\UserInterface',
             'App\Repository\Bot\UserRepository'
         );
+
+        $this->app->bind(
+            'App\Repository\Bot\FoodMenuInterface',
+            'App\Repository\Bot\FoodMenuRepository'
+
+        );
+        $this->app->bind(
+            'App\Repository\Bot\HotelInterface',
+            'App\Repository\Bot\HotelRepository'
+
+        );
     }
 }

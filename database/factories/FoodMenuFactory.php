@@ -23,7 +23,8 @@ class FoodMenuFactory extends Factory
     {
         return [
             'name' =>$this->faker->name,
-            // 'photo' =>$this->faker->image(storage_path('food_menu_photos'),640,480,null,false),
+            'photo' =>$this->faker->imageUrl(),
+            // 'photo' =>$this->faker->image('food_menu_photos',640,480,null,false),
             'description'=>$this->faker->paragraph,
         ];
     }

@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Bot\Account\UserController;
+use App\Http\Controllers\Bot\Order\FoodMenuController;
 
 
 
@@ -20,6 +21,10 @@ Route::prefix('/12345')->group(function(){
         Route::get('/user/{telegram_user_id}',[UserController::class,'show']);
 
 
+    });
+
+    Route::prefix('/foodmenu')->group(function(){
+        Route::get('/',[FoodMenuController::class,'index']);
     });
 
 

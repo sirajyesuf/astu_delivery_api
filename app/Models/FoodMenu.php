@@ -11,6 +11,7 @@ class FoodMenu extends Model
 
     public function hotels(){
         
-        return $this->belongsToMany(Hotel::class,'foodmenu_hotel');
+        return $this->belongsToMany(Hotel::class,'foodmenu_hotel','foodmenu_id','hotel_id');
+        
     }
 }
