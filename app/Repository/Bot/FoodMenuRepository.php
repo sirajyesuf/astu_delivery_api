@@ -11,7 +11,7 @@ class FoodMenuRepository implements FoodMenuInterface{
     }
     public function hotels($id){
 
-        return $this->find($id)->hotels;
+        return $this->find($id)->hotels()->paginate(1);
 
     }
 
