@@ -11,7 +11,8 @@ class Hotel extends Model
     
     public function foodmenus(){
         
-        return $this->belongsToMany(FoodMenu::class,'foodmenu_hotel','foodmenu_id','hotel_id');
+        return $this->belongsToMany(FoodMenu::class,'foodmenu_hotel','foodmenu_id','hotel_id')->withPivot('price');
+
 
     }
 }

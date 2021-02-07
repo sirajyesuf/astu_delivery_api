@@ -6,8 +6,8 @@ use App\Models\Hotel;
 class HotelRepository implements HotelInterface{
 
     public function all(){
-
-        return Hotel::paginate(5);
+        
+        return Hotel::all();
     }
 
 

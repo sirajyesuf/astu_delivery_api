@@ -9,6 +9,16 @@ class FoodMenuRepository implements FoodMenuInterface{
 
         return FoodMenu::paginate(1);
     }
+    public function hotels($id){
+
+        return $this->find($id)->hotels;
+
+    }
+
+    public function find($id){
+        return FoodMenu::find($id);
+    }
+
 
 
 }

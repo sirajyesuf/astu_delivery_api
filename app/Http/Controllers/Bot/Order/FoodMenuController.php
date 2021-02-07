@@ -30,7 +30,7 @@ class FoodMenuController extends Controller
     
     public function show($id)
     {
-        //
+        return $this->repo->find($id);
     }
 
   
@@ -43,5 +43,10 @@ class FoodMenuController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function hotels($id){
+
+        return $this->repo->hotels($id);
     }
 }

@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Bot\Account\UserController;
 use App\Http\Controllers\Bot\Order\FoodMenuController;
-
+use App\Http\Controllers\Bot\Order\HotelController;
 
 
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
@@ -25,6 +25,13 @@ Route::prefix('/12345')->group(function(){
 
     Route::prefix('/foodmenu')->group(function(){
         Route::get('/',[FoodMenuController::class,'index']);
+        Route::get('/{id}',[FoodMenuController::class,'show']);
+        Route::get('/{id}/hotels',[FoodMenuController::class,'hotels']);
+    });
+
+    Route::prefix('/hotels')->group(function(){
+        Route::get('/',[HotelController::class,'index']);
+
     });
 
 

@@ -4,14 +4,18 @@ namespace App\Http\Controllers\Bot\Order;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Repository\Bot\HotelInterface;
 
 class HotelController extends Controller
 {
- 
-    // return available hotels for the specific food
-    
-    public function index($food_menu_id)
+    private $repo;
+    public function __construct(HotelInterface $repo){
+
+        $this->repo = $repo;
+    }    
+    public function index()
     {
+        return $this->repo->all();
         
     }
 
