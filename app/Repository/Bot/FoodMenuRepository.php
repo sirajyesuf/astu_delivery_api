@@ -18,6 +18,12 @@ class FoodMenuRepository implements FoodMenuInterface{
     public function find($id){
         return FoodMenu::find($id);
     }
+    public function hotel($id,$hotel_id){
+
+        return $this->find($id)->hotels()->where('hotel_id',$hotel_id)->first();
+
+    }
+
 
 
 

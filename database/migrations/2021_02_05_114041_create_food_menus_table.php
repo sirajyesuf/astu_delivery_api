@@ -15,9 +15,9 @@ class CreateFoodMenusTable extends Migration
     {
         Schema::create('food_menus', function (Blueprint $table) {
             $table->id();
-            $table->string("name");
+            $table->string("name")->unique();
             $table->string("photo")->nullable();
-            $table->string("description");
+            $table->longText("description");
             $table->timestamps();
         });
     }

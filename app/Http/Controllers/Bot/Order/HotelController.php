@@ -28,7 +28,7 @@ class HotelController extends Controller
   
     public function show($id)
     {
-        //
+        return $this->repo->find($id);
     }
 
   
@@ -41,4 +41,15 @@ class HotelController extends Controller
     {
         //
     }
+
+    /**
+     * return foodmenus for a hotel
+     */
+    public function foodmenus($id){
+
+        return $this->repo->foodmenus($id);
+
+    }
+
+    
 }

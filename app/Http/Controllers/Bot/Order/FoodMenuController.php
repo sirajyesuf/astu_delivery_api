@@ -44,9 +44,21 @@ class FoodMenuController extends Controller
     {
         //
     }
+    /**
+     * return hotels for specific foodmenu
+     */
 
     public function hotels($id){
 
         return $this->repo->hotels($id);
+    }
+     
+
+     /**
+      * return hotel with price for  specific foodmenu
+      */
+    public function hotel($id,$hotel_id){
+        
+        return $this->repo->hotel($id,$hotel_id);
     }
 }

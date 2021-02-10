@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        \App\Models\User::factory(10)->create();
         \App\Models\FoodMenu::factory()->count(10)->create();
         \App\Models\Hotel::factory()->count(5)->create();
 
@@ -28,6 +28,22 @@ class DatabaseSeeder extends Seeder
             3 =>['price'=>150],
             4 =>['price'=>170]
         ]);
+
+        \App\Models\Order::factory()->count(10)->create();
+
+        $order=\App\Models\Order::find(1);
+        $order->foodmenus()->attach([
+            2 =>['qty'=>2],
+            2 =>['qty'=>1],
+            3 =>['qty'=>3]
+        ]);
+        $order2 = \App\Models\Order::find(2);
+        $order2->foodmenus()->attach([
+            1 =>['qty'=>2],
+            4 =>['qty'=>1],
+            5 =>['qty'=>3]
+        ]);
+
 
 
         

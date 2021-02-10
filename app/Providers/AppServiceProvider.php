@@ -39,5 +39,11 @@ class AppServiceProvider extends ServiceProvider
             'App\Repository\Bot\HotelRepository'
 
         );
+        $this->app->bind(
+            'App\Repository\Bot\OrderInterface',
+            'App\Repository\Bot\OrderRepository'
+            
+        );
+        
     }
 }
