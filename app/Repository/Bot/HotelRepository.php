@@ -2,7 +2,8 @@
 namespace App\Repository\Bot;
 use App\Repository\Bot\HotelInterface;
 use App\Models\Hotel;
-
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\DB;
 class HotelRepository implements HotelInterface{
 
     public function all(){
@@ -14,13 +15,10 @@ class HotelRepository implements HotelInterface{
         return Hotel::find($id);
 
     }
-    public function foodmenus($id){
-        
-        return $this->find($id)->foodmenus()->where('hotel_id',$id)->paginate(1);
+    public function foodmenus($id,$exclude=[]){
 
-
+        return DB::table('food_menus')->join('foodmenu_hotel','food_menus.id','=','foodmenu_hotel.foodmenu_id')->where('foodmenu_hotel.hotel_id',$id)->whereNotIn('foodmenu_hotel.foodmenu_id',$exclude)->paginate(1);
     }
-
 
     
 }

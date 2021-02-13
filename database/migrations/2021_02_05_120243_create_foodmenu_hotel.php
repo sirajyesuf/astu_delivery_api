@@ -16,9 +16,9 @@ class CreateFoodmenuHotel extends Migration
         Schema::create('foodmenu_hotel', function (Blueprint $table) {
 
             $table->id();
-            $table->bigInteger("price");
             $table->unsignedbiginteger('foodmenu_id');
             $table->unsignedbiginteger('hotel_id');
+            $table->bigInteger("price");
             $table->foreign('hotel_id')->references('id')->on('hotels');
             $table->foreign('foodmenu_id')->references('id')->on('food_menus');
             $table->timestamps();

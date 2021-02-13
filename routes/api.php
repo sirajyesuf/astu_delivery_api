@@ -25,7 +25,7 @@ Route::prefix('/12345')->group(function(){
 
     });
 
-    Route::prefix('/foodmenu')->group(function(){
+    Route::prefix('/foodmenus')->group(function(){
         Route::get('/',[FoodMenuController::class,'index']);
         Route::get('/{id}',[FoodMenuController::class,'show']);
         Route::get('/{id}/hotels',[FoodMenuController::class,'hotels']);

@@ -45,9 +45,19 @@ class HotelController extends Controller
     /**
      * return foodmenus for a hotel
      */
-    public function foodmenus($id){
+    public function foodmenus(Request $req,$id){
 
-        return $this->repo->foodmenus($id);
+        $exclude  =  $req->query('exclude');
+
+        if(! $exclude){
+
+            return $this->repo->foodmenus($id,[]);
+        }
+        else{
+
+            return $this->repo->foodmenus($id,$exclude);
+        }
+
 
     }
 
